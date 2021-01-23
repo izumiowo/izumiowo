@@ -2,14 +2,15 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>#20201006122500</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -77,6 +78,7 @@ div.hr:focus { cursor: none; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
 li { margin: 0px; position: relative; }
 blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
@@ -86,7 +88,6 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -100,6 +101,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
 .md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
@@ -150,13 +152,16 @@ table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
-svg[id^="mermaidChart"] { line-height: 1em; }
 mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 @media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
 }
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
 
 
 :root {
@@ -352,24 +357,24 @@ table tr:nth-child(2n),
 thead {
     background-color: #f8f8f8;
 }
-table tr th {
+table th {
     font-weight: bold;
     border: 1px solid #dfe2e5;
     border-bottom: 0;
     margin: 0;
     padding: 6px 13px;
 }
-table tr td {
+table td {
     border: 1px solid #dfe2e5;
     margin: 0;
     padding: 6px 13px;
 }
-table tr th:first-child,
-table tr td:first-child {
+table th:first-child,
+table td:first-child {
     margin-top: 0;
 }
-table tr th:last-child,
-table tr td:last-child {
+table th:last-child,
+table td:last-child {
     margin-bottom: 0;
 }
 
@@ -543,23 +548,6 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export os-windows'>
-<div id='write'  class=''><h2><a name="小黑屋" class="md-header-anchor"></a><span>小黑屋</span></h2><hr /><h3><a name="20201006182400" class="md-header-anchor"></a><span>#20201006182400</span></h3><ul><li><strong><span>玩家ID</span></strong><span> ： A_cult_Leader</span></li><li><strong><span>处理原因</span></strong><span> : 自愿劳改</span></li><li><strong><span>处罚决定</span></strong><span> : 监狱劳改</span></li></ul><blockquote><p><span>[18:22:15] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二级下士﹀]<span> &lt;?法国外籍军团第1步兵团A_cult_Leader&gt; 虎纹猫人 我想去监狱vanvan</span>
-<span>[18:23:01] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二级下士﹀]<span> &lt;?法国外籍军团第1步兵团A_cult_Leader&gt; 我要进去</span></p></blockquote><hr /><h3><a name="20201006181800" class="md-header-anchor"></a><span>#20201006181800</span></h3><ul><li><strong><span>玩家ID</span></strong><span> ： Ld_208</span></li><li><strong><span>处理原因</span></strong><span> : 自愿劳改</span></li><li><strong><span>处罚决定</span></strong><span> : 监狱劳改</span></li></ul><blockquote><p><span>[18:18:13] [Server thread/INFO]: [喊话] </span>[<span>world</span>][大校≡◎◎◎◎≡]<span> &lt;╬德国&#39;日耳曼&#39;第11步兵团-隶属南方集团军Ld_208&gt; 我想康康监狱啥样子</span></p><p><span>[18:18:23] [Server thread/INFO]: [喊话] </span>[<span>world</span>][大校≡◎◎◎◎≡]<span> &lt;╬德国&#39;日耳曼&#39;第11步兵团-隶属南方集团军Ld_208&gt; 确实，让我康康</span></p></blockquote><hr /><h3><a name="20201006122500" class="md-header-anchor"></a><span>#20201006122500</span></h3><ul><li><strong><span>玩家ID</span></strong><span> : block24_204, goutoujun278139</span></li><li><strong><span>处理原因</span></strong><span> : 干扰游戏秩序</span></li><li><strong><span>处罚决定</span></strong><span> : 监狱劳改</span></li></ul><blockquote><p><span>[10:05:47] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][中尉═◆◆═]<span> &lt;╬德国&#39;熊人&#39;航空团Block24_204&gt; 我去苏吧</span>
-<span>[10:05:56] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][中尉═◆◆═]<span> &lt;╬德国&#39;熊人&#39;航空团Block24_204&gt; 拯救苏联计划</span>
-<span>[10:06:33] [Server thread/INFO]: &lt;Block24_204&gt; You paid 7 coins to player &#39;Goutoujun278139&#39;.</span>
-<span>[10:13:47] [Server thread/INFO]: &lt;Block24_204&gt; You paid 6 coins to player &#39;Goutoujun278139&#39;.</span>
-<span>[10:16:59] [Server thread/INFO]: &lt;Block24_204&gt; You paid 3 coins to player &#39;Goutoujun278139&#39;.</span></p></blockquote><blockquote><p><span>[12:06:52] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 大家好 我是德国来的内鬼</span>
-<span>[12:07:30] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我不杀队友 但是会坑队友</span>
-<span>[12:07:58] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 德国队友别打 我是内鬼</span>
-<span>[12:08:44] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我说了我是内鬼 别打了</span>
-<span>[12:09:30] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 队友们别怕 我来挡你们的枪子弹</span>
-<span>[12:10:30] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 德军别打我</span>
-<span>[12:10:37] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我是你们的内鬼 我是Block</span>
-<span>[12:10:49] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 专业挡子弹</span>
-<span>[12:12:11] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我不用枪杀</span>
-<span>[12:13:29] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 挡子弹</span>
-<span>[12:13:44] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 好 你没了</span>
-<span>[12:14:17] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 德军别怕 为你们挡子弹</span>
-<span>[12:14:55] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 兄弟 别打了</span></p></blockquote><hr /></div>
+<div id='write'  class=''><h2><a name="小黑屋" class="md-header-anchor"></a><span>小黑屋</span></h2><h3><a name="20210123123800" class="md-header-anchor"></a><span>#20210123123800</span></h3><ul><li><strong><span>玩家ID</span></strong><span> : mu_yun , SAS_biaobing , ASA_biaobing</span></li><li><strong><span>处理原因</span></strong><span> : 作弊（变速）</span></li><li><strong><span>处理决定</span></strong><span> : 封禁 ID &amp; IP</span></li></ul><hr /><h3><a name="20201006182400" class="md-header-anchor"></a><span>#20201006182400</span></h3><ul><li><strong><span>玩家ID</span></strong><span> ： A_cult_Leader</span></li><li><strong><span>处理原因</span></strong><span> : 自愿劳改</span></li><li><strong><span>处罚决定</span></strong><span> : 监狱劳改</span></li></ul><blockquote><p><span>[18:22:15] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二级下士﹀]<span> &lt;?法国外籍军团第1步兵团A_cult_Leader&gt; 虎纹猫人 我想去监狱vanvan </span></p><p><span>[18:23:01] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二级下士﹀]<span> &lt;?法国外籍军团第1步兵团A_cult_Leader&gt; 我要进去</span></p></blockquote><hr /><h3><a name="20201006181800" class="md-header-anchor"></a><span>#20201006181800</span></h3><ul><li><strong><span>玩家ID</span></strong><span> ： Ld_208</span></li><li><strong><span>处理原因</span></strong><span> : 自愿劳改</span></li><li><strong><span>处罚决定</span></strong><span> : 监狱劳改</span></li></ul><blockquote><p><span>[18:18:13] [Server thread/INFO]: [喊话] </span>[<span>world</span>][大校≡◎◎◎◎≡]<span> &lt;╬德国&#39;日耳曼&#39;第11步兵团-隶属南方集团军Ld_208&gt; 我想康康监狱啥样子</span></p><p><span>[18:18:23] [Server thread/INFO]: [喊话] </span>[<span>world</span>][大校≡◎◎◎◎≡]<span> &lt;╬德国&#39;日耳曼&#39;第11步兵团-隶属南方集团军Ld_208&gt; 确实，让我康康</span></p></blockquote><hr /><h3><a name="20201006122500" class="md-header-anchor"></a><span>#20201006122500</span></h3><ul><li><strong><span>玩家ID</span></strong><span> : block24_204, goutoujun278139</span></li><li><strong><span>处理原因</span></strong><span> : 干扰游戏秩序</span></li><li><strong><span>处罚决定</span></strong><span> : 监狱劳改</span></li></ul><blockquote><p><span>[10:05:47] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][中尉═◆◆═]<span> &lt;╬德国&#39;熊人&#39;航空团Block24_204&gt; 我去苏吧 </span></p><p><span>[10:05:56] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][中尉═◆◆═]<span> &lt;╬德国&#39;熊人&#39;航空团Block24_204&gt; 拯救苏联计划 </span></p><p><span>[10:06:33] [Server thread/INFO]: &lt;Block24_204&gt; You paid 7 coins to player &#39;Goutoujun278139&#39;. </span></p><p><span>[10:13:47] [Server thread/INFO]: &lt;Block24_204&gt; You paid 6 coins to player &#39;Goutoujun278139&#39;. </span></p><p><span>[10:16:59] [Server thread/INFO]: &lt;Block24_204&gt; You paid 3 coins to player &#39;Goutoujun278139&#39;.</span></p></blockquote><blockquote><p><span>[12:06:52] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 大家好 我是德国来的内鬼 </span></p><p><span>[12:07:30] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我不杀队友 但是会坑队友 </span></p><p><span>[12:07:58] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 德国队友别打 我是内鬼 </span></p><p><span>[12:08:44] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我说了我是内鬼 别打了 </span></p><p><span>[12:09:30] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 队友们别怕 我来挡你们的枪子弹 </span></p><p><span>[12:10:30] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 德军别打我 </span></p><p><span>[12:10:37] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我是你们的内鬼 我是Block </span></p><p><span>[12:10:49] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 专业挡子弹 </span></p><p><span>[12:12:11] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 我不用枪杀 </span></p><p><span>[12:13:29] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 挡子弹 </span></p><p><span>[12:13:44] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 好 你没了 </span></p><p><span>[12:14:17] [Server thread/INFO]: [喊话] </span>[<span>ypl</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 德军别怕 为你们挡子弹 </span></p><p><span>[12:14:55] [Server thread/INFO]: [喊话] </span>[<span>world</span>][二等兵＝]<span> &lt;★苏联第&#39;424&#39;近卫炮兵团Goutoujun278139&gt; 兄弟 别打了</span></p></blockquote></div>
 </body>
 </html>
